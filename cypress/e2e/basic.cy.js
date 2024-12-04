@@ -13,6 +13,12 @@ describe("empty spec", () => {
     cy.get("h1").contains(/Our Coffee/i);
   });
 
+  it("navigates to the product page", () => {
+    cy.get('a[href="/fichas"]').eq(0).click();
+    cy.url().should("include", "/fichas");
+    cy.get("h1").contains(/Fichas/i);
+  });
+
   it("navigates to the values page", () => {
     cy.get('a[href="/values"]').eq(0).click();
     cy.url().should("include", "/values");
